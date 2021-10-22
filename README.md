@@ -12,8 +12,8 @@ The application starts in a sleep state. This state can be started or stopped by
 	'N': Reset simulation with new random generated masses\
 	'+': Increase mass of projectile\
 	'-': Decrease mass of projectile\
-	'w': Move projectuile up\
-	's': Move projectile down\
-	'd': Rotate projectile clockwise\
-	'a': Rotate projectile counter-clockwise\
-	'f': Fire projectile
+	'W': Move projectuile up\
+	'S': Move projectile down\
+	'D': Rotate projectile clockwise\
+	'A': Rotate projectile counter-clockwise\
+	'F': Fire projectile
