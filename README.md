@@ -2,7 +2,7 @@ Some small projects I created to practice programming physics using the Cyclone 
 
 
 ### Platform:
-A plane is being held up by 4 springlike cables. The cables are attached to 4 fixed points.\ 
+A plane is being held up by 4 springlike cables. The cables are attached to 4 fixed points.\
 Forces can be applied using the WASD keys.
 
 ### Wall:
