@@ -11,20 +11,20 @@ Box::Box()
 void Box::render()
 {
 	GLfloat mat[16];
-    body->getGLTransform(mat);
-	
-    glPushMatrix();
-    glMultMatrixf(mat);
-    glScalef(halfSize.x*2, halfSize.y*2, halfSize.z*2); // Use the dimensions of the rigid body for the 'mesh'
-    glutSolidCube(1.0f);
-    glPopMatrix();
+	body->getGLTransform(mat);
+
+    	glPushMatrix();
+	glMultMatrixf(mat);
+	glScalef(halfSize.x*2, halfSize.y*2, halfSize.z*2); // Use the dimensions of the rigid body for the 'mesh'
+	glutSolidCube(1.0f);
+	glPopMatrix();
 }
 
 void Box::reset()
 {
 	body->setOrientation(1,0,0,0);
-    body->setVelocity(0,0,0);
-    body->setRotation(0,0,0);
+	body->setVelocity(0,0,0);
+	body->setRotation(0,0,0);
 }
 
 void Box::randomWeight(cyclone::Random rdm)
@@ -35,5 +35,5 @@ void Box::randomWeight(cyclone::Random rdm)
 
 Box::~Box()
 {
-    delete body;
+	delete body;
 }
