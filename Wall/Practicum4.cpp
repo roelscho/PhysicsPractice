@@ -1,4 +1,4 @@
-#include "Practicum4.h"
+#include "Wall.h"
 
 /*
 	The application starts in a sleep state.
@@ -45,18 +45,19 @@ wall::~wall()
 
 void wall::createBox(Box *box, cyclone::Vector3 position, cyclone::Vector3 dimensions)
 {
-	box->halfSize = dimensions;			//Set size
-    box->body->setPosition(position);	//Set position
-    box->body->setOrientation(1,0,0,0); //Set orientation
-    box->body->setVelocity(0,0,0);		//Set Velocity
-    box->body->setRotation(0,0,0);		//Set rotation
+	box->halfSize = dimensions;		//Set size
+	box->body->setPosition(position);	//Set position
+	box->body->setOrientation(1,0,0,0); 	//Set orientation
+	box->body->setVelocity(0,0,0);		//Set Velocity
+	box->body->setRotation(0,0,0);		//Set rotation
+	
 	//Add physics
-    cyclone::Matrix3 it;
+	cyclone::Matrix3 it;
 	it.setBlockInertiaTensor(box->halfSize, box->body->getMass());
-    box->body->setInertiaTensor(it);
-    box->body->setDamping(0.9f, 0.9f);
-    box->body->calculateDerivedData();
-    box->calculateInternals();
+	box->body->setInertiaTensor(it);
+	box->body->setDamping(0.9f, 0.9f);
+	box->body->calculateDerivedData();
+	box->calculateInternals();
 
 	//Set sleep state once the boxes are created
 	box->body->setCanSleep(true);
@@ -68,7 +69,7 @@ void wall::display()
 	RigidBodyApplication::display();
 
 	//Draw Boxes
-    glEnable(GL_NORMALIZE);
+    	glEnable(GL_NORMALIZE);
 	for(int c = 0; c < BOX_COUNT; c++)
 	{
 		glColor3f(0.5f, 0.5f, 0.5f); 
@@ -108,9 +109,9 @@ void wall::generateContacts()
 {
 	//Reset the contacts to calculate new collisions
 	cData.reset(maxContacts);
-    cData.friction = (cyclone::real)0.9;
-    cData.restitution = (cyclone::real)0.1;
-    cData.tolerance = (cyclone::real)0.1;
+    	cData.friction = (cyclone::real)0.9;
+    	cData.restitution = (cyclone::real)0.1;
+    	cData.tolerance = (cyclone::real)0.1;
 
 	int j_min = 0;
 	for(int i = 0; i < BOX_COUNT; i++)
@@ -175,7 +176,7 @@ void wall::resetProjectile()
 	boxProjectile.body->setVelocity(0,0,0);
 	 cyclone::Matrix3 it;
 	it.setBlockInertiaTensor(boxProjectile.halfSize, boxProjectile.body->getMass());
-    boxProjectile.body->setInertiaTensor(it);
+    	boxProjectile.body->setInertiaTensor(it);
 }
 
 // Keypress handling for manipulating the Projectile
