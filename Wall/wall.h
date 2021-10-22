@@ -22,19 +22,18 @@ class wall : public RigidBodyApplication
 
 	virtual void updateObjects(cyclone::real duration);
 	virtual void generateContacts();
-    virtual void update();
+    	virtual void update();
 	virtual void reset();
 	virtual void reset(bool randomWeight);
 	virtual void resetProjectile();
-    virtual void key(unsigned char key);
+    	virtual void key(unsigned char key);
 
 public:
-    wall();
-    ~wall();
-
-	void createBox(Box *box, cyclone::Vector3 position, cyclone::Vector3 dimensions);
-    virtual const char* getTitle();
-    virtual void display();
+wall();
+~wall();	
+void createBox(Box *box, cyclone::Vector3 position, cyclone::Vector3 dimensions);
+virtual const char* getTitle();
+virtual void display();
 
 private:
 	cyclone::Random rdm;
