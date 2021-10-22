@@ -16,4 +16,4 @@ The application starts in a sleep state. This state can be started or stopped by
 	's': Move projectile down\
 	'd': Rotate projectile clockwise\
 	'a': Rotate projectile counter-clockwise\
-	'f': Fire projectile\
+	'f': Fire projectile
